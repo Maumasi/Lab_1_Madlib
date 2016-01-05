@@ -22,3 +22,4 @@
 # Any errors will earn an automatic ZERO on this assignment.
 # Your mad lib should print out the entire story to the console.
 
+def 
