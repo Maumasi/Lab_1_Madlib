@@ -26,6 +26,8 @@
 # #NAME , has never eaten #FOOD again.
 
 userMadLibList = []
+pluralDays = ""
+pluralFood = ""
 
 print "Lets play some Mad Lib!"
 
@@ -55,7 +57,10 @@ def madLib(list):
     if int(list[4]) > 1:
         pluralDays = "s"
 
-    lib = "There was a place that was very influenced by " + list[0] + " and changed the way people ate their food. \nOne day " + list[1] + " ate " + list[2] + " " + list[3] + " that made " + list[1] + " very ill for " + list[4] + " day" + pluralDays + ". \n" + list[1] + ", has never eaten " + list[3] +" again."
+    if int(list[2]) > 1:
+        pluralFood = "s"
+
+    lib = "There was a place that was very influenced by " + list[0] + ". \nThe people ate their food in the same way food was eaten in " + list[0] + ". \nOne day " + list[1] + " ate " + list[2] + " " + list[3] + pluralFood + ". " + list[1] + " was very ill for " + list[4] + " day" + pluralDays + " because of it. \n" + list[1] + ", has never eaten " + list[3] +" again."
     print lib
 
     return lib
@@ -63,4 +68,5 @@ def madLib(list):
 madLib(userMadLibList)
 
 
-print userMadLibList
+print "\nHer are your responces in order:"
+print "COUNTRY: " + userMadLibList[0] + "\nNAME: " + userMadLibList[1] + "\n1ST NUMBER: " + userMadLibList[2] + "\nFAVORITE FOOD: " + userMadLibList[3] + "\n2ND NUMBER: " + userMadLibList[4]
