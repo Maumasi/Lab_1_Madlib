@@ -62,7 +62,6 @@ def madLib(list):
 
     lib = "\nMad Lib:\nThere was a place that was very influenced by " + list[0] + ". \nThe people ate their food in the same way food was eaten in " + list[0] + ". \nOne day " + list[1] + " ate " + list[2] + " " + list[3] + pluralFood + ". " + list[1] + " was very ill for " + list[4] + " day" + pluralDays + " because of it. \n" + list[1] + ", has never eaten " + list[3] + " again."
     print lib
-
     return list
 
 madLib(userMadLibList)
