@@ -21,31 +21,46 @@
 # Your mad lib should print out the entire story to the console.
 
 # Mad Lib:
-# There was a place were NOUN changed the way people ate their food.
-# One day NAME ate NUMBER1 FOOD that made NAME very ill for NUMBER2 days.
-# NAME , has never eaten FOOD again.
+# There was a place were #COUNTRY changed the way people ate their food.
+# One day #NAME ate #NUMBER1 #FOOD that made NAME very ill for #NUMBER2 days.
+# #NAME , has never eaten #FOOD again.
 
 userMadLibList = []
 
-print "Give me a noun."
-userMadLibList.append(raw_input())
+print "Lets play some Mad Lib!"
 
-while len(userMadLibList) != 5:
-    for i in range(len(userMadLibList)):
-        if len(userMadLibList) == 0:
-            print "You didn't answer the first question!"
-            userMadLibList.append(raw_input())
-        elif len(userMadLibList) == 1:
-            print "What's your name?"
-            userMadLibList.append(raw_input())
-        elif len(userMadLibList) == 2:
-            print "Give me a number."
-            userMadLibList.append(raw_input())
-        elif len(userMadLibList) == 3:
-            print "What's your favorite food?"
-            userMadLibList.append(raw_input())
-        elif len(userMadLibList) == 4:
-            print "Give me another number."
-            userMadLibList.append(raw_input())
+def madLib(list):
+    pluralDays = ""
+    print "Name a country."
+    userMadLibList.append(raw_input())
+
+    while len(list) != 5:
+        for i in range(len(list)):
+            if len(list) == 0:
+                print "You didn't answer the first question! \n Name a country."
+                list.append(raw_input())
+            elif len(list) == 1:
+                print "What's your name?"
+                list.append(raw_input())
+            elif len(list) == 2:
+                print "Give me a number."
+                list.append(raw_input())
+            elif len(list) == 3:
+                print "What's your favorite food?"
+                list.append(raw_input())
+            elif len(list) == 4:
+                print "Give me another number."
+                list.append(raw_input())
+
+    if int(list[4]) > 1:
+        pluralDays = "s"
+
+    lib = "There was a place that was very influenced by " + list[0] + " and changed the way people ate their food. \nOne day " + list[1] + " ate " + list[2] + " " + list[3] + " that made " + list[1] + " very ill for " + list[4] + " day" + pluralDays + ". \n" + list[1] + ", has never eaten " + list[3] +" again."
+    print lib
+
+    return lib
+
+madLib(userMadLibList)
+
 
 print userMadLibList
